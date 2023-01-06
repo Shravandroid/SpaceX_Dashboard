@@ -1,6 +1,17 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+
+
+/* 
+
+.Dashboard {
+  text-align: center;
+} */
 
 .App-logo {
   height: 40vmin;
