@@ -4,6 +4,7 @@ import { LaunchCard } from './LaunchCard';
 import { FilterForm } from './FilterForm';
 import { LaunchModal } from './LaunchModal';
 import image from './image/spacex.png'
+import './style.css'
   
 function Dashboard() {
   const [launches, setLaunches] = useState([]);
@@ -86,7 +87,7 @@ function Dashboard() {
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const success = params.get('success');
+    const success = params.get('success');  
     const timeframe = params.get('timeframe');
     if (success || timeframe) {
       setFilter(prevFilter => ({
@@ -115,11 +116,8 @@ function Dashboard() {
 
   return (
     
-    <div>
-      <img style={{  display: "block",
-  marginLeft: "auto",
-  marginRight: "auto",
-  width: "20%"}} src={image} />
+    <div className='main-div'>
+      <img src={image} />
       <FilterForm filter={filter} setFilter={setFilter} />
       {filteredLaunches.length > 0 ? (
         filteredLaunches.map(launch => (
@@ -130,7 +128,7 @@ function Dashboard() {
           />
         ))
       ) : (
-        <p>No launches found</p>
+        <p className='launch-card'>No launches found</p>
       )}
       {selectedLaunch && (
         <LaunchModal launch={selectedLaunch} closeModal={closeModal} />

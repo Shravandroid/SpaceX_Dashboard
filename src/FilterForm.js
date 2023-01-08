@@ -2,10 +2,9 @@ import React from 'react';
 
 export function FilterForm({ filter, setFilter }) {
   return (
-    <form style={{display: 'flex' ,justifyContent: 'space-between'}}>
+    <form className='form'>
       <label htmlFor="success">
-        Launch Status:
-        <select
+        Launch Status: <select
           id="success"
           name="success"
           value={filter.success}
@@ -19,8 +18,7 @@ export function FilterForm({ filter, setFilter }) {
         </select>
       </label>
       <label htmlFor="timeframe">
-        Timeframe:
-        <select
+        Timeframe: <select
           id="timeframe"
           name="timeframe"
           value={filter.timeframe}
